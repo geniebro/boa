@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.oasis.project.boa.dao.ProviderDAO">
+
+	<select id="selectProvider" resultType="com.oasis.project.boa.dto.ProviderDTO">
+		select * from provider_profile_tb where user_id=#{user_id}
+	</select>
+	<insert id="insertProvider" parameterType="com.oasis.project.boa.dto.ProviderDTO">
+		INSERT INTO provider_profile_tb (`name`, `user_id`, `location`,`worker_num`) VALUES (#{name},#{user_id},#{location},#{worker_num})
+	</insert>
+	<select id="selectProviderList" resultType="com.oasis.project.boa.dto.ProviderDTO">
+		select * from provider_profile_tb
+	</select>
+
+</mapper>
